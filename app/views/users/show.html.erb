@@ -1,0 +1,19 @@
+<div>
+  <p>  
+    <b>Name:</b> <%= @user.name %>
+  </p>
+  <p>
+    <b>Email:</b>   <%= @user.email %>
+  </p>
+  <ul>
+    <% @microposts.each do |micropost| %>
+      <li><%= micropost.content %></li>
+    <% end %>
+  <ul>
+</div>
+<div>
+  <p>
+    <%= link_to("Edit","/users/#{@user.id}/edit") %> | 
+    <%= link_to("Back","/users/new") %>
+  </p>
+</div>

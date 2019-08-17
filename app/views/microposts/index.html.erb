@@ -1,0 +1,19 @@
+<h1>Listing microposts</h1>
+
+<table>
+  <tr>
+    <th> <b>Content</b></th>
+    <th> <b>User</b></th>
+  <tr>
+  <% @micropost.each do |micropost| %>
+    <tr>
+      <td><%= micropost.content %></td>
+      <td><%= micropost.user_id %></td>
+
+      <td><td><%= link_to("Show","/microposts/#{micropost.id}") %></td>
+      <td><%= link_to("Edit","/microposts/#{micropost.id}/edit") %></td>
+      <td><%= link_to("Destroy","/microposts/#{micropost.id}/destroy", {method:"post"}) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to("New Micropost","/microposts/new") %>

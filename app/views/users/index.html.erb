@@ -1,0 +1,19 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th> <b>Name</b></th> 
+    <th> <b>Email</b></th>
+  <tr>
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+
+      <td><td><%= link_to("Show","/users/#{user.id}") %></td>
+      <td><%= link_to("Edit","/users/#{user.id}/edit") %></td>
+      <td><%= link_to("Destroy","/users/#{user.id}/destroy", {method:"post"}) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to("New User","/users/new") %>

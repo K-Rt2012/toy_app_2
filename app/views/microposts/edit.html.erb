@@ -1,0 +1,30 @@
+<h1>Edithing Micropost</h1>
+
+<div>
+  <%= form_tag("/microposts/#{@micropost.id}/update") do %>
+    <ul>
+      <% @micropost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <p>
+      Content<br>
+      <textarea name = "content"></textarea>
+    </p>
+
+    <p>
+      User<br>
+      <select name="user_id" >
+        <% @users.each do |user|%>
+        <option><%= user.id %></option>
+        <% end %>
+      </select>
+    </p>
+    <p><input type="submit" value="Update content"></p>
+  <% end %>
+  <p>
+    <%= link_to("Show","/microposts/#{@micropost.id}") %> | 
+    <%= link_to("Back","/microposts/new") %>
+  </p>
+
+</div>

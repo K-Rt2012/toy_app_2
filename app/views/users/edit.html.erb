@@ -1,0 +1,27 @@
+<h1>Edithing User</h1>
+
+<div>
+  <%= form_tag("/users/#{@user.id}/update") do %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+    </ul>
+    <p>
+      Name<br>
+      <input name = "name">
+    </p>
+
+    <p>
+      Email<br>
+      <input name = "email">
+    </p>
+
+    <p><input type="submit" value="Update User"></p>
+  <% end %>
+  <p>
+    <%= link_to("Show","/users/#{@user.id}") %> | 
+    <%= link_to("Back","/users/new") %>
+  </p>
+
+</div>
