@@ -1,3 +1,27 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*indexページ--------*/
+.user_image {
+  width: 60px;
+  height: 60px;
+}
+
+table th{
+  padding: 10px;
+}
+
+table .index_data{
+  padding: 3px 10px;
+}
+
+.index_crud{
+  
+}
+/*showページ---------*/
+.show_image_title{
+  float: left;
+  margin-top: 20px;
+}

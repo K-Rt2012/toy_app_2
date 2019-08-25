@@ -28,9 +28,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    @user.name = params[:name]
-    @user.email = params[:email]
-    if @user.save
+    #@user.name = params[:name]
+    #@user.email = params[:email]
+    def users_params
+      params.require(:user).permit(:image, :name, :email)
+    end
+    if @user.update(users_params)
+    #if @user.save
       redirect_to("/users/#{@user.id}")
     else
       render("users/edit")

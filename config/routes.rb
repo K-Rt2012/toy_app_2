@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/new' => 'users#new'
   get 'users' => 'users#index'
   post  'users/create' => 'users#create'
-  post 'users/:id/update' => 'users#update'
+  resources :users, only: %i(update)
   post 'users/:id/destroy' => 'users#destroy'
   get 'users/:id/edit' => 'users#edit'
   get 'users/:id' => 'users#show'

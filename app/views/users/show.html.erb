@@ -1,10 +1,16 @@
 <div>
-  <p>  
+  <div class = "show_name">  
     <b>Name:</b> <%= @user.name %>
-  </p>
-  <p>
+  </div>
+  <div class = "show_email">
     <b>Email:</b>   <%= @user.email %>
-  </p>
+  </div>
+  <div class = "show_image_wrapper">
+    <div class = "show_image_title"><b>Image:</b></div>   
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image, class:"user_image" %>
+    <% end %>
+  </div>
   <ul>
     <% @microposts.each do |micropost| %>
       <li><%= micropost.content %></li>
