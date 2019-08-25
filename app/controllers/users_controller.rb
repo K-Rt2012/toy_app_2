@@ -46,4 +46,7 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to("/users")
   end
+
+  def top
+  end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get '/' => 'users#top'
   get 'users/new' => 'users#new'
   get 'users' => 'users#index'
   post  'users/create' => 'users#create'
