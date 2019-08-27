@@ -10,6 +10,31 @@
   </head>
 
   <body>
+  <header>
+    <ul class="header_menus">
+      <% if current_user %>
+        <li>
+          <%= link_to(current_user.name,"/users/#{current_user.id}") %>
+      　</li>
+        <li>
+      　  <%= link_to("ユーザー一覧","/users")
+    　  </li>
+    　  <li>
+    　　  <%= link_to("ログアウト","/users/new")
+  　　  </li>
+      <% else %>
+        <li>
+          <%= link_to("新規登録","/users/new")
+        </li>
+        <li>
+          <%= link_to("ログイン","/users/new")
+        </li>
+        <li>
+          <%= link_to("トップページ","/")
+        </li>
+      <% end %>
+    </ul>
+  </header>
     <%= yield %>
   </body>
 </html>

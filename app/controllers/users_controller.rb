@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:name], email: params[:email])
+    @user = User.new(name: params[:name], 
+                      email: params[:email],
+                      password: params[:password]
+                      )
     if @user.save
       redirect_to("/users/#{@user.id}")
     else

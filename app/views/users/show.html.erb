@@ -6,10 +6,12 @@
     <b>Email:</b>   <%= @user.email %>
   </div>
   <div class = "show_image_wrapper">
-    <div class = "show_image_title"><b>Image:</b></div>   
-    <% if @user.image.attached? %>
-      <%= image_tag @user.image, class:"user_image" %>
-    <% end %>
+    <div class = "show_image_title">
+      <b>Image:</b>
+    </div>   
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image, class:"user_image" %>
+      <% end %>
   </div>
   <ul>
     <% @microposts.each do |micropost| %>

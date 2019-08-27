@@ -14,12 +14,14 @@
       <% else %>
         <td class="index_data"><%= image_tag "hitogata.jpg", class:"user_image" %></td>
       <% end %>
-      <td class="index_data"><%= user.name %></td>
-      <td class="index_data"><%= user.email %></td>
+        <td class="index_data"><%= user.name %></td>
+        <td class="index_data"><%= user.email %></td>
 
-      <td class="index_crud"><%= link_to("Show","/users/#{user.id}") %></td>
-      <td class="index_crud"><%= link_to("Edit","/users/#{user.id}/edit") %></td>
-      <td class="index_crud"><%= link_to("Destroy","/users/#{user.id}/destroy", {method:"post"}) %></td>
+        <td class="index_crud"><%= link_to("Show","/users/#{user.id}") %></td>
+      <% if current_user.id == user.id %>
+        <td class="index_crud"><%= link_to("Edit","/users/#{user.id}/edit") %></td>
+        <td class="index_crud"><%= link_to("Destroy","/users/#{user.id}/destroy", {method:"post"}) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
