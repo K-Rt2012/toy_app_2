@@ -3,14 +3,16 @@
     <b>Name:</b> <%= @user.name %>
   </div>
   <div class = "show_email">
-    <b>Email:</b>   <%= @user.email %>
+    <br><b>Email:</b>   <%= @user.email %>
   </div>
   <div class = "show_image_wrapper">
     <div class = "show_image_title">
-      <b>Image:</b>
+      <br><b>Image:</b>
     </div>   
       <% if @user.image.attached? %>
-        <%= image_tag @user.image, class:"user_image" %>
+        <br><%= image_tag @user.image, class: "user_image" %>
+      <% else %>
+        <br><%= image_tag "hitogata.jpg", class: "user_image" %>
       <% end %>
   </div>
   <ul>
@@ -21,7 +23,9 @@
 </div>
 <div>
   <p>
-    <%= link_to("Edit","/users/#{@user.id}/edit") %> | 
-    <%= link_to("Back","/users/new") %>
+  <% if current_user.id == @user.id %>
+    <%= link_to("Edit","/users/#{@user.id}/edit") %> |
+  <% end %>
+    <%= link_to("Back","/users") %>
   </p>
 </div>

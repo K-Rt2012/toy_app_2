@@ -3,12 +3,14 @@
     <b>Content:</b> <%= @micropost.content %>
   </p>
   <p>
-    <b>User_id:</b>   <%= @micropost.user_id %>
+    <b>User:</b>   <%= @user.name %>
   </p>
 </div>
 <div>
   <p>
-    <%= link_to("Edit","/microposts/#{@micropost.id}/edit") %> | 
-    <%= link_to("Back","/microposts/new") %>
+    <% if current_user.id == @micropost.user_id %>
+      <%= link_to("Edit","/microposts/#{@micropost.id}/edit") %> |
+    <% end %>
+      <%= link_to("Back","/microposts") %>
   </p>
 </div>

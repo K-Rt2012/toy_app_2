@@ -8,11 +8,13 @@
   <% @micropost.each do |micropost| %>
     <tr>
       <td><%= micropost.content %></td>
-      <td><%= micropost.user_id %></td>
+      <td><%= micropost.user.name %></td>
 
-      <td><td><%= link_to("Show","/microposts/#{micropost.id}") %></td>
-      <td><%= link_to("Edit","/microposts/#{micropost.id}/edit") %></td>
-      <td><%= link_to("Destroy","/microposts/#{micropost.id}/destroy", {method:"post"}) %></td>
+        <td><%= link_to("Show","/microposts/#{micropost.id}") %></td>
+      <% if current_user.id == micropost.user_id %>
+        <td><%= link_to("Edit","/microposts/#{micropost.id}/edit") %></td>
+        <td><%= link_to("Destroy","/microposts/#{micropost.id}/destroy", {method:"post"}) %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

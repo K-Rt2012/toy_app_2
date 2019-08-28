@@ -10,18 +10,19 @@
       </ul>
 
       <p>
-        Content<br>
+        <b>Content</b><br>
         <textarea name = "content"></textarea>
       </p>
 
       <p>
-        User<br>
-        <select name="user_id" >
-        <% @users.each do |user|%>
-        <option><%= user.id %></option>
-        <% end %>
-      </select>
-
+        <b>User:</b>
+        <!--<select name="user_id" >-->
+          <!--<% @users.each do |user|%>-->
+            <!--<option><%= user.id %></option>-->
+          <!--<% end %>-->
+        <!--</select>-->
+        <%= current_user.name %>
+        <input type="hidden" name="user_id" value="<%= current_user.id %>">
       </p>
       
       <p><input type="submit" value="Create Micropost"></p>

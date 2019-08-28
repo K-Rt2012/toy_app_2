@@ -10,31 +10,34 @@
   </head>
 
   <body>
-  <header>
-    <ul class="header_menus">
-      <% if current_user %>
-        <li>
-          <%= link_to(current_user.name,"/users/#{current_user.id}") %>
-      　</li>
-        <li>
-      　  <%= link_to("ユーザー一覧","/users")
-    　  </li>
-    　  <li>
-    　　  <%= link_to("ログアウト","/users/new")
-  　　  </li>
-      <% else %>
-        <li>
-          <%= link_to("新規登録","/users/new")
-        </li>
-        <li>
-          <%= link_to("ログイン","/users/new")
-        </li>
-        <li>
-          <%= link_to("トップページ","/")
-        </li>
-      <% end %>
-    </ul>
-  </header>
+    <header class="header">
+      <ul class="header_menus clear">
+        <% if current_user %>
+          <li>
+            <%= link_to("現在ログイン中のユーザー：#{current_user.name}","/users/#{current_user.id}") %>
+          </li>
+          <li>
+            <%= link_to("ユーザー一覧","/users")%>
+          </li>
+          <li>
+            <%= link_to("投稿一覧","/microposts")%>
+          </li>
+          <li>
+            <%= link_to("ログアウト","/users/sign_out")%>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("新規登録","/users/new")%>
+          </li>
+          <li>
+            <%= link_to("ログイン","/users/sign_in")%>
+          </li>
+          <li>
+            <%= link_to("トップページ","/")%>
+          </li>
+        <% end %>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

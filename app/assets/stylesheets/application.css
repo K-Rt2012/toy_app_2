@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+.header_menus{
+  list-style: none;
+  padding: 0;
+}
+.clear:after{
+  content:".";
+  clear: both;
+  height: 0;
+  display: block;
+  visibility: hidden;
+}
+
+li{
+  float: left;
+  margin-left:15px; 
+}

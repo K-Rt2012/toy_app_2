@@ -8,23 +8,19 @@
       <% end %>
     </ul>
     <p>
-      Content<br>
-      <textarea name = "content"></textarea>
+      <b>Content<b><br>
+      <textarea name="content" value="<%= @micropost.content %>"></textarea>
     </p>
-
     <p>
-      User<br>
-      <select name="user_id" >
-        <% @users.each do |user|%>
-        <option><%= user.id %></option>
-        <% end %>
-      </select>
+      <b>User:</b>
+      <%= current_user.name %>
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
     </p>
     <p><input type="submit" value="Update content"></p>
   <% end %>
   <p>
     <%= link_to("Show","/microposts/#{@micropost.id}") %> | 
-    <%= link_to("Back","/microposts/new") %>
+    <%= link_to("Back","/microposts") %>
   </p>
 
 </div>

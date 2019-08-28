@@ -24,11 +24,12 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find_by(id: params[:id])
+    @user = @micropost.user
   end
 
   def edit
     @micropost = Micropost.find_by(id: params[:id])
-    @users = User.all
+    #@users = User.all
   end
 
   def update
