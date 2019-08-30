@@ -21,11 +21,11 @@
     <% end %>
   <ul>
 </div>
-<div>
+<br><div>
   <p>
-  <% if current_user.id == @user.id %>
-    <%= link_to("Edit","/users/#{@user.id}/edit") %> |
-  <% end %>
-    <%= link_to("Back","/users") %>
+    <% if current_user.id == @user.id %>
+      <%= link_to("Edit","/users/#{@user.id}/edit") %> |
+    <% end %>
+      <%= link_to("Back","/users") %>
   </p>
 </div>
