@@ -24,10 +24,9 @@
         <%= current_user.name %>
         <input type="hidden" name="user_id" value="<%= current_user.id %>">
       </p>
-      
       <p><input type="submit" value="Create Micropost"></p>
     <% end %>
   </div>
 
-  <p><%= link_to("Back","/microposts") %></p>
+  <p><%= link_to "Back","/microposts", class:"btn btn-primary" %></p>
 </div>

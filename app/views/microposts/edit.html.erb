@@ -16,11 +16,11 @@
       <%= current_user.name %>
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
     </p>
-    <p><input type="submit" value="Update content"></p>
+    <p><input type="submit" value="Update content" class="btn btn-primary" ></p>
   <% end %>
   <p>
-    <%= link_to("Show","/microposts/#{@micropost.id}") %> | 
-    <%= link_to("Back","/microposts") %>
+    <%= link_to "Show","/microposts/#{@micropost.id}", class:"btn btn-primary" %> | 
+    <%= link_to "Back","/microposts", class:"btn btn-primary" %>
   </p>
 
 </div>

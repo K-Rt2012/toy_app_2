@@ -1,3 +1,13 @@
 // Place all the styles related to the microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+tr{
+  border-bottom: 1px white solid;
+}
+
+.td_microposts{
+  padding: 20px 40px 0px 0px;
+}
+.td_crud{
+  padding: 20px 10px 0px 0px;
+}

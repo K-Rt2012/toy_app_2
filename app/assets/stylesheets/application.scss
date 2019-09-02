@@ -10,8 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-@import "bootstrap";
  */
+@import "darkly/variables";
+@import "bootstrap";
+@import "darkly/bootswatch";
+@import "*";
+
 .header_menus{
   list-style: none;
   padding: 0;
@@ -26,5 +30,9 @@
 
 .header_logo{
   float: left;
-  margin-left:15px; 
+  margin-left:30px;
+}
+.header_logo_logout{
+  float: right;
+  margin-right:15px;
 }

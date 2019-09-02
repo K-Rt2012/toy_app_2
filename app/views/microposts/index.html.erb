@@ -7,15 +7,14 @@
   <tr>
   <% @micropost.each do |micropost| %>
     <tr>
-      <td><%= micropost.content %></td>
-      <td><%= micropost.user.name %></td>
+      <td class="td_microposts"><%= micropost.content %></td>
+      <td class="td_microposts"><%= micropost.user.name %></td>
 
-        <td><%= link_to("Show","/microposts/#{micropost.id}") %></td>
+        <td class="td_crud"><%= link_to "Show","/microposts/#{micropost.id}", class:"btn btn-primary" %></td>
       <% if current_user.id == micropost.user_id %>
-        <td><%= link_to("Edit","/microposts/#{micropost.id}/edit") %></td>
-        <td><%= link_to("Destroy","/microposts/#{micropost.id}/destroy", {method:"post"}) %></td>
+        <td class="td_crud"><%= link_to "Edit","/microposts/#{micropost.id}/edit", class:"btn btn-primary" %></td>
+        <td class="td_crud"><%= link_to "Destroy","/microposts/#{micropost.id}/destroy", method: :post, class:"btn btn-primary" %></td>
       <% end %>
     </tr>
   <% end %>
 </table>
-<%= link_to("New Micropost","/microposts/new") %>
